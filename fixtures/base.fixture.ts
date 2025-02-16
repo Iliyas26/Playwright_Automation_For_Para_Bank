@@ -5,6 +5,7 @@ import { ParaBankRegistrationPage } from '../pages/registration.page';
 import { ParaBankAccountsPage } from '../pages/accounts.page';
 import { ParaBankBillPayPage } from '../pages/billpay.page';
 
+// Interface for ParaBank fixture
 export interface ParaBankFixture {
     context: BrowserContext;
     page: Page;
@@ -16,6 +17,7 @@ export interface ParaBankFixture {
     registeredUser?: { username: string; password: string };
 }
 
+// Extend base test with ParaBank fixture
 export const test = base.extend<ParaBankFixture>({
     context: async ({ browser }, use) => {
         const context = await browser.newContext();
@@ -46,6 +48,7 @@ export const test = base.extend<ParaBankFixture>({
 
 export { expect } from '@playwright/test';
 
+// Step decorator for test steps
 export function step(stepName?: string) {
     return function decorator(
         target: Function,

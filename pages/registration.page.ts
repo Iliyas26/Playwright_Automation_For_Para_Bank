@@ -20,6 +20,7 @@ export class ParaBankRegistrationPage extends BasePage {
 
     @step()
     async registerNewUser() {
+        // Generate a random username and fill in the registration form
         const username = RandomGenerator.generateUsername();
         await this.page.fill(this.selectors.firstName, 'Test');
         await this.page.fill(this.selectors.lastName, 'User');
@@ -33,6 +34,6 @@ export class ParaBankRegistrationPage extends BasePage {
         await this.page.fill(this.selectors.password, 'Test@123');
         await this.page.fill(this.selectors.confirmPassword, 'Test@123');
         await this.page.click(this.selectors.registerButton);
-        return username;
+        return username; // Return the generated username
     }
 }

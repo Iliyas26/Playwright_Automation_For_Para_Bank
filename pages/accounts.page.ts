@@ -13,7 +13,7 @@ export class ParaBankAccountsPage extends BasePage {
         transferButton: "input[value='Transfer']",
         balanceField: "td[class='balance']",
         accountOverview: "//a[normalize-space()='Accounts Overview']",
-         accountOpeningError: ".error",
+        accountOpeningError: ".error",
         loadingMessage: "#loading"
     };
 

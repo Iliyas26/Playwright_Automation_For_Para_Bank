@@ -1,6 +1,7 @@
 import { BasePage } from './base.page';
 import { step } from '../fixtures/base.fixture';
 
+// Interface for Payee information
 interface PayeeInfo {
     name: string;
     address: string;
@@ -31,6 +32,7 @@ export class ParaBankBillPayPage extends BasePage {
 
     @step()
     async payBill(payeeInfo: PayeeInfo) {
+        // Fill in the bill payment form and submit
         await this.page.fill(this.selectors.payeeName, payeeInfo.name);
         await this.page.fill(this.selectors.address, payeeInfo.address);
         await this.page.fill(this.selectors.city, payeeInfo.city);
@@ -46,6 +48,7 @@ export class ParaBankBillPayPage extends BasePage {
 
     @step()
     async verifyPaymentSuccess() {
+        // Wait for the success message to appear after payment
         await this.page.waitForSelector(this.selectors.successMessage);
         return this.page.isVisible(this.selectors.successMessage);
     }
