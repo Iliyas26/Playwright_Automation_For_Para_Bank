@@ -1,0 +1,22 @@
+{
+    "name": "parabank-test-automation",
+    "version": "1.0.0",
+    "description": "E2E Test Automation Framework for Para Bank",
+    "scripts": {
+        "test:ui": "playwright test --config=playwright.config.ts --project=chromium tests/ui/",
+        "test:api": "playwright test --config=playwright.config.ts --project=api tests/api/",
+        "test:all": "playwright test --config=playwright.config.ts",
+        "report": "playwright show-report"
+    },
+    "dependencies": {
+        "@playwright/test": "^1.42.1",
+        "dotenv": "^16.4.1",
+        "typescript": "^5.3.3",
+        "xml2js": "^0.6.2"
+    },
+    "devDependencies": {
+        "@types/node": "^20.11.16",
+        "prettier": "^3.2.5",
+        "ts-node": "^10.9.2"
+    }
+}
